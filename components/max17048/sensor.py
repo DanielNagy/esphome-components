@@ -30,20 +30,23 @@ CONFIG_SCHEMA = (
             cv.Optional(CONF_BATTERY_VOLTAGE): sensor.sensor_schema(
                 unit_of_measurement=UNIT_VOLT,
                 accuracy_decimals=3,  # Actual Resolution: 78.125µV/cell
-                device_class=DEVICE_CLASS_BATTERY,
+                device_class=DEVICE_CLASS_VOLTAGE,
                 state_class=STATE_CLASS_MEASUREMENT,
+                entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
             ),
             cv.Optional(CONF_BATTERY_LEVEL): sensor.sensor_schema(
                 unit_of_measurement=UNIT_PERCENT,
-                accuracy_decimals=2,  # Actual Resolution: 1/256th of a percent
+                accuracy_decimals=3,  # Actual Resolution: 1/256th of a percent
                 device_class=DEVICE_CLASS_BATTERY,
                 state_class=STATE_CLASS_MEASUREMENT,
+                entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
             ),
             cv.Optional(CONF_RATE): sensor.sensor_schema(
                 unit_of_measurement=f"{UNIT_PERCENT}/{UNIT_HOUR}",
                 accuracy_decimals=1,  # Actual Resolution: 0.208%/hr
                 device_class=DEVICE_CLASS_BATTERY,
                 state_class=STATE_CLASS_MEASUREMENT,
+                entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
             )
         }
     )
