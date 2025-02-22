@@ -7,6 +7,8 @@ from esphome.const import (
     CONF_RATE,
     CONF_ID,
     DEVICE_CLASS_BATTERY,
+    DEVICE_CLASS_VOLTAGE,
+    ENTITY_CATEGORY_DIAGNOSTIC,
     UNIT_HOUR,
     UNIT_PERCENT,
     UNIT_VOLT,
